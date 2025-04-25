@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 const AuthPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [name, setName] = useState('');
   const [isSignup, setIsSignup] = useState(false);
   const navigate = useNavigate();
 
@@ -22,14 +23,13 @@ const AuthPage = () => {
           password,
           options: {
             data: {
-              name: email.split('@')[0] // Default name from email
+              full_name: name
             }
           }
         });
 
         if (error) throw error;
-        toast.success('Cadastro realizado com sucesso!');
-        navigate('/');
+        toast.success('Cadastro realizado com sucesso! Verifique seu email.');
       } else {
         const { data, error } = await supabase.auth.signInWithPassword({
           email,
@@ -52,6 +52,15 @@ const AuthPage = () => {
           {isSignup ? 'Cadastro' : 'Login'}
         </h2>
         <form onSubmit={handleAuth} className="space-y-4">
+          {isSignup && (
+            <Input
+              type="text"
+              placeholder="Nome completo"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required={isSignup}
+            />
+          )}
           <Input
             type="email"
             placeholder="E-mail"
