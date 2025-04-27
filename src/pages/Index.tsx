@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
@@ -45,6 +44,12 @@ const Index = () => {
       description: "Configurar lembretes automáticos",
       icon: <Bell className="h-10 w-10 text-book-600" />,
       path: "/notificacoes"
+    },
+    {
+      title: "Mensagens",
+      description: "Envie mensagens para a escola",
+      icon: <MessageSquare className="h-10 w-10 text-school-600" />,
+      path: "/mensagens"
     }
   ];
 

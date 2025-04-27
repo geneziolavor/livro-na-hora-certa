@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -58,6 +57,11 @@ export function AppSidebar() {
       title: "Notificações",
       url: "/notificacoes",
       icon: Bell,
+    },
+    {
+      title: "Mensagens",
+      url: "/mensagens",
+      icon: MessageSquare,
     },
   ];
 

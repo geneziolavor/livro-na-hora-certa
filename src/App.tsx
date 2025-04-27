@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +17,7 @@ import AppSidebar from "./components/layout/AppSidebar";
 import Header from "./components/layout/Header";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
+import MensagensPage from "./pages/MensagensPage";
 
 const queryClient = new QueryClient();
 
@@ -61,6 +61,7 @@ const App = () => {
                         <Route path="/horarios" element={<HorariosPage />} />
                         <Route path="/contatos" element={<ContatosPage />} />
                         <Route path="/notificacoes" element={<NotificacoesPage />} />
+                        <Route path="/mensagens" element={<MensagensPage />} />
                         <Route path="*" element={<NotFound />} />
                       </Routes>
                     </main>
