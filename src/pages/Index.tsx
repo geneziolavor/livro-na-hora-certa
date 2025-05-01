@@ -1,9 +1,10 @@
+
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import { Button } from "@/components/ui/button";
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card";
 import PageTitle from '@/components/layout/PageTitle';
-import { BookOpen, User, Calendar, Book, Bell, MessageSquare } from 'lucide-react';
+import { BookOpen, User, Calendar, Book, Bell, MessageSquare, HelpCircle } from 'lucide-react';
 
 const Index = () => {
   const navigate = useNavigate();
@@ -50,6 +51,12 @@ const Index = () => {
       description: "Envie mensagens para a escola",
       icon: <MessageSquare className="h-10 w-10 text-school-600" />,
       path: "/mensagens"
+    },
+    {
+      title: "Manual do Usuário",
+      description: "Guia completo de utilização do app",
+      icon: <HelpCircle className="h-10 w-10 text-book-600" />,
+      path: "/manual"
     }
   ];
 

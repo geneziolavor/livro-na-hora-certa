@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { 
@@ -6,7 +7,8 @@ import {
   Calendar, 
   BookOpen as Book,
   MessageSquare,
-  Bell
+  Bell,
+  HelpCircle
 } from 'lucide-react';
 import {
   Sidebar,
@@ -62,6 +64,11 @@ export function AppSidebar() {
       title: "Mensagens",
       url: "/mensagens",
       icon: MessageSquare,
+    },
+    {
+      title: "Manual do Usuário",
+      url: "/manual",
+      icon: HelpCircle,
     },
   ];
 

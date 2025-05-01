@@ -1,3 +1,4 @@
+
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -18,6 +19,7 @@ import Header from "./components/layout/Header";
 import { useState, useEffect } from "react";
 import { supabase } from "@/integrations/supabase/client";
 import MensagensPage from "./pages/MensagensPage";
+import ManualPage from "./pages/ManualPage";
 
 const queryClient = new QueryClient();
 
@@ -62,6 +64,7 @@ const App = () => {
                         <Route path="/contatos" element={<ContatosPage />} />
                         <Route path="/notificacoes" element={<NotificacoesPage />} />
                         <Route path="/mensagens" element={<MensagensPage />} />
+                        <Route path="/manual" element={<ManualPage />} />
                         <Route path="*" element={<NotFound />} />
                       </Routes>
                     </main>
