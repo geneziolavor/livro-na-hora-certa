@@ -21,11 +21,21 @@ const StudentMessageForm = () => {
     setIsLoading(true);
     
     try {
+      // Pegar o usuário atual
+      const { data: { session } } = await supabase.auth.getSession();
+      
+      if (!session?.user) {
+        toast.error('Você precisa estar logado para enviar mensagens');
+        setIsLoading(false);
+        return;
+      }
+
       const { error } = await supabase
         .from('student_messages')
         .insert({ 
           message: message.trim(),
-          status: 'pending'
+          status: 'pending',
+          user_id: session.user.id
         });
 
       if (error) throw error;
